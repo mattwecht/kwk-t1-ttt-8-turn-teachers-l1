@@ -9,9 +9,11 @@ def turn(board)
   if !(valid_move?(board,index))
     turn(board)
   end
-  move(board,index)
+  board = move(board,index)
   display_board(board)
+  exit
 end
+
 ## helper methods ##
 def display_board (board = [' ',' ',' ',' ',' ',' ',' ',' ',' ' ])
       puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -46,5 +48,5 @@ def input_to_index(input)
 end
 
 def move (board, index, char = "x")
-  board[index] = char
+  return board[index] = char
 end
